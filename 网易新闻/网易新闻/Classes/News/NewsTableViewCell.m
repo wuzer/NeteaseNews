@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *title;
 @property (weak, nonatomic) IBOutlet UILabel *digestLabel;
 @property (weak, nonatomic) IBOutlet UILabel *replyCount;
+@property (strong, nonatomic) IBOutletCollection(UIImageView) NSArray *extraImageViews;
 
 @end
 
@@ -29,7 +30,31 @@
     self.replyCount.text = [NSString stringWithFormat:@"%d",news.replyCount];
     
     [self.iconView setImageWithURL:[NSURL URLWithString:news.imgsrc]];
+    
+    if (news.imgextra.count == 2) {
+        int index = 0;
+        for (UIImageView *imageView in self.extraImageViews) {
+//            NSLog(@"%d",self.extraImageViews.count);
+            NSDictionary *dict = news.imgextra[index];
+            NSString *urlStr = dict[@"imgsrc"];
+            NSURL *url = [NSURL URLWithString:urlStr];
+            
+            // 设置图像
+            [imageView setImageWithURL:url];
+            index++;
+        }
+    }
 }
+
++ (NSString *)cellIdentifier:(News *)news {
+    
+    if (news.imgextra.count == 2) {
+        return @"imageCell";
+    }
+    return @"newsCell";
+
+}
+
 
 - (void)awakeFromNib {
     

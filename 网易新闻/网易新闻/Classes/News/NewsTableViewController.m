@@ -28,10 +28,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    [self.tableView registerClass:[NewsTableViewCell class] forCellReuseIdentifier:reuseID];
+    // 设置预估行高
+    self.tableView.estimatedRowHeight = 80;
+    
+    // 自动计算行高
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    
     
     __weak typeof(self) weakSelf = self;
-    [News loadDataWithURLString:@"T1348649580692/0-20.html" finished:^(NSArray *newsList) {
+    [News loadDataWithURLString:@"T1348647853363/0-20.html" finished:^(NSArray *newsList) {
         weakSelf.newsList = newsList;
     }];
 }
@@ -46,9 +51,13 @@
 static NSString *reuseID = @"newsCell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    NewsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseID forIndexPath:indexPath];
+    News *new = self.newsList[indexPath.row];
+    NSString *ID = [NewsTableViewCell cellIdentifier:new];
     
-    cell.news = self.newsList[indexPath.row];
+    NewsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID forIndexPath:indexPath];
+    
+    
+    cell.news = new;
 //    NSLog(@"%@",self.newsList);
     
     return cell;
