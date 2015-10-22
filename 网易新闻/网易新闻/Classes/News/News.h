@@ -13,10 +13,11 @@
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *imgsrc;
 @property (nonatomic, copy) NSString *digest;
-@property (nonatomic, copy) NSString *replyCount;
+@property (nonatomic, assign) int replyCount;
+@property (nonatomic, strong) NSArray *imgextra;
 
 + (instancetype)newsWithDict:(NSDictionary *)dict;
 
-+ (void)loadDataWithURLString:(NSString *)urlStr;
++ (void)loadDataWithURLString:(NSString *)urlStr finished:(void (^)(NSArray *newsList)) finished;
 
 @end

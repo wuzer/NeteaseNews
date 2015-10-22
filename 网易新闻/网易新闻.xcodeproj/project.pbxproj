@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		50CA1DA9748C1DF654E59D5C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75B2BACD336C71442723C8E8 /* libPods.a */; };
+		84538BDF1BD910F20013F166 /* NewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84538BDE1BD910F20013F166 /* NewsTableViewCell.m */; };
 		847FAD3B1BD8D24900670118 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 847FAD3A1BD8D24900670118 /* main.m */; };
 		847FAD3E1BD8D24900670118 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 847FAD3D1BD8D24900670118 /* AppDelegate.m */; };
 		847FAD461BD8D24900670118 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 847FAD451BD8D24900670118 /* Assets.xcassets */; };
@@ -21,6 +22,8 @@
 
 /* Begin PBXFileReference section */
 		75B2BACD336C71442723C8E8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		84538BDD1BD910F20013F166 /* NewsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsTableViewCell.h; sourceTree = "<group>"; };
+		84538BDE1BD910F20013F166 /* NewsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsTableViewCell.m; sourceTree = "<group>"; };
 		847FAD361BD8D24900670118 /* 网易新闻.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "网易新闻.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		847FAD3A1BD8D24900670118 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		847FAD3C1BD8D24900670118 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -108,6 +111,8 @@
 				847FAD531BD8D32D00670118 /* News.storyboard */,
 				847FAD551BD8D34200670118 /* NewsTableViewController.h */,
 				847FAD561BD8D34200670118 /* NewsTableViewController.m */,
+				84538BDD1BD910F20013F166 /* NewsTableViewCell.h */,
+				84538BDE1BD910F20013F166 /* NewsTableViewCell.m */,
 				847FADA11BD8DF3A00670118 /* News.h */,
 				847FADA21BD8DF3A00670118 /* News.m */,
 			);
@@ -254,6 +259,7 @@
 				847FADA61BD8E8F700670118 /* NSArray+Log.m in Sources */,
 				847FAD3E1BD8D24900670118 /* AppDelegate.m in Sources */,
 				847FAD3B1BD8D24900670118 /* main.m in Sources */,
+				84538BDF1BD910F20013F166 /* NewsTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
