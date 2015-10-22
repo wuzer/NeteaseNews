@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "9D6345C01F8F7E504A0FDBC0E78CE791D2A9C0F0",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "9D6345C01F8F7E504A0FDBC0E78CE791D2A9C0F0" : 0,
+    "EB3EE0FFE12D30941EC3C7C5F74A5EC5E9AAC980" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "F72E7C72-ABF4-4F4E-9132-0BA04B7918E0",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "9D6345C01F8F7E504A0FDBC0E78CE791D2A9C0F0" : "NeteaseNews\/",
+    "EB3EE0FFE12D30941EC3C7C5F74A5EC5E9AAC980" : ".."
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "网易新闻",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "网易新闻\/网易新闻.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:wuzer\/NeteaseNews.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9D6345C01F8F7E504A0FDBC0E78CE791D2A9C0F0"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:wuzer\/microBlog.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "EB3EE0FFE12D30941EC3C7C5F74A5EC5E9AAC980"
+    }
+  ]
+}
