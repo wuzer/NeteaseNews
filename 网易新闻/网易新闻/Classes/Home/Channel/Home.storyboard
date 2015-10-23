@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bQ9-cK-bo1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="41V-Jw-TbY">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Home View Controller-->
+        <!--网易新闻-->
         <scene sceneID="aLy-HU-Szi">
             <objects>
                 <viewController id="bQ9-cK-bo1" customClass="HomeViewController" sceneMemberID="viewController">
@@ -14,16 +15,92 @@
                         <viewControllerLayoutGuide type="bottom" id="4XT-HN-h5l"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="QcE-4i-iyL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x2z-HL-23A">
+                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                <subviews>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VrG-wb-Yst" userLabel="channel">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <animations/>
+                                    </scrollView>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="9DK-jv-pa7"/>
+                                    <constraint firstItem="VrG-wb-Yst" firstAttribute="top" secondItem="x2z-HL-23A" secondAttribute="top" id="9G9-tO-iJX"/>
+                                    <constraint firstItem="VrG-wb-Yst" firstAttribute="leading" secondItem="x2z-HL-23A" secondAttribute="leading" id="s05-hV-YyM"/>
+                                    <constraint firstAttribute="trailing" secondItem="VrG-wb-Yst" secondAttribute="trailing" id="xV8-Ky-9SL"/>
+                                    <constraint firstAttribute="bottom" secondItem="VrG-wb-Yst" secondAttribute="bottom" id="zDc-CK-syJ"/>
+                                </constraints>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="lr1-Wd-Xdr">
+                                <rect key="frame" x="0.0" y="108" width="600" height="492"/>
+                                <animations/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pVg-uP-sEG">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="channelCell" id="UxT-4j-vN4">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <animations/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <animations/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4XT-HN-h5l" firstAttribute="top" secondItem="lr1-Wd-Xdr" secondAttribute="bottom" id="6Q8-qz-S2B"/>
+                            <constraint firstItem="lr1-Wd-Xdr" firstAttribute="top" secondItem="x2z-HL-23A" secondAttribute="bottom" id="ESD-bV-Wzz"/>
+                            <constraint firstItem="x2z-HL-23A" firstAttribute="top" secondItem="Px2-Om-kde" secondAttribute="bottom" id="FMy-NA-7pb"/>
+                            <constraint firstAttribute="trailing" secondItem="x2z-HL-23A" secondAttribute="trailing" id="MO0-Gg-ntw"/>
+                            <constraint firstItem="lr1-Wd-Xdr" firstAttribute="leading" secondItem="QcE-4i-iyL" secondAttribute="leadingMargin" constant="-20" id="QTH-eH-q47"/>
+                            <constraint firstItem="x2z-HL-23A" firstAttribute="leading" secondItem="QcE-4i-iyL" secondAttribute="leading" id="sE7-ys-jtB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lr1-Wd-Xdr" secondAttribute="trailing" constant="-20" id="t4k-V8-LC5"/>
+                        </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationItem key="navigationItem" title="网易新闻" id="Ieg-Xt-hpn"/>
+                    <connections>
+                        <outlet property="CollectionView" destination="lr1-Wd-Xdr" id="HRM-fT-6wn"/>
+                        <outlet property="channelView" destination="VrG-wb-Yst" id="dg3-UP-5bY"/>
+                        <outlet property="layout" destination="pVg-uP-sEG" id="hYn-fb-tTO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IgB-bS-DmZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="197.5" y="131.5"/>
+            <point key="canvasLocation" x="950" y="130"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="XQg-yh-qYY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="41V-Jw-TbY" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fR4-r7-G9j">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bQ9-cK-bo1" kind="relationship" relationship="rootViewController" id="i81-AL-0KJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dUi-EZ-A55" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="197" y="131"/>
         </scene>
     </scenes>
 </document>

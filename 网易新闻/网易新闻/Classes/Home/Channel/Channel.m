@@ -31,8 +31,17 @@
         [tempArray addObject:[self objectWithDict:obj]];
     }];
     
-    NSLog(@"%@",tempArray);
+//    NSLog(@"%@",tempArray);
     return tempArray.copy;
 }
+
+- (NSString *)description {
+    
+    NSArray *properties = [self.class loadProperties];
+    NSDictionary *dict = [self dictionaryWithValuesForKeys:properties];
+    
+    return [NSString stringWithFormat:@"<%@ : %p> %@",self.class,self,dict];
+}
+
 
 @end
