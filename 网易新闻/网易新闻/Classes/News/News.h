@@ -15,9 +15,7 @@
 @property (nonatomic, copy) NSString *digest;
 @property (nonatomic, assign) int replyCount;
 @property (nonatomic, strong) NSArray *imgextra;
-@property (nonatomic, assign,getter=isBigImage) BOOL bigImage;
-
-+ (instancetype)newsWithDict:(NSDictionary *)dict;
+@property (nonatomic, assign, getter=isBigImage) BOOL imgType;
 
 + (void)loadDataWithURLString:(NSString *)urlStr finished:(void (^)(NSArray *newsList)) finished;
 

@@ -34,9 +34,8 @@
     // 自动计算行高
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     
-    
     __weak typeof(self) weakSelf = self;
-    [News loadDataWithURLString:@"T1348647853363/0-60.html" finished:^(NSArray *newsList) {
+    [News loadDataWithURLString:@"T1348649580692/0-60.html" finished:^(NSArray *newsList) {
         weakSelf.newsList = newsList;
     }];
 }
