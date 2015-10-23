@@ -11,6 +11,13 @@
 
 @implementation Channel
 
+- (void)setTid:(NSString *)tid {
+    _tid = tid.copy;
+    
+    _urlString = [NSString stringWithFormat:@"%@/0-40.html",tid];
+
+}
+
 + (NSArray *)channelList {
 
     // 加载 json 的二进制数据
@@ -32,7 +39,11 @@
     }];
     
 //    NSLog(@"%@",tempArray);
-    return tempArray.copy;
+    
+    // 针对 tid 做一个排序
+    return [tempArray sortedArrayUsingComparator:^NSComparisonResult(Channel *obj1, Channel *obj2) {
+        return [obj1.tid compare:obj2.tid];
+    }];
 }
 
 - (NSString *)description {

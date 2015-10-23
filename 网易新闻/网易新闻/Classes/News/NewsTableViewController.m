@@ -25,6 +25,16 @@
     [self.tableView reloadData];
 }
 
+- (void)setUrlString:(NSString *)urlString {
+    _urlString = urlString;
+
+    __weak typeof(self) weakSelf = self;
+    [News loadDataWithURLString:urlString finished:^(NSArray *newsList) {
+        weakSelf.newsList = newsList;
+    }];
+
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -34,10 +44,6 @@
     // 自动计算行高
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     
-    __weak typeof(self) weakSelf = self;
-    [News loadDataWithURLString:@"T1348649580692/0-60.html" finished:^(NSArray *newsList) {
-        weakSelf.newsList = newsList;
-    }];
 }
 
 #pragma mark - Table view data source

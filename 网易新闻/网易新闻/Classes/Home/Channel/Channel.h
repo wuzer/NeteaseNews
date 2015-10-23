@@ -13,6 +13,8 @@
 @property (nonatomic, copy) NSString *tname;
 @property (nonatomic, copy) NSString *tid;
 
+@property (nonatomic, strong, readonly)  NSString *urlString;
+
 + (NSArray *)channelList;
 
 @end

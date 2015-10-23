@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		50CA1DA9748C1DF654E59D5C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75B2BACD336C71442723C8E8 /* libPods.a */; };
+		8419F50A1BDA143900C5E680 /* ChannelViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8419F5091BDA143900C5E680 /* ChannelViewCell.m */; };
 		84538BDF1BD910F20013F166 /* NewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84538BDE1BD910F20013F166 /* NewsTableViewCell.m */; };
 		847FAD3B1BD8D24900670118 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 847FAD3A1BD8D24900670118 /* main.m */; };
 		847FAD3E1BD8D24900670118 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 847FAD3D1BD8D24900670118 /* AppDelegate.m */; };
@@ -28,6 +29,8 @@
 
 /* Begin PBXFileReference section */
 		75B2BACD336C71442723C8E8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8419F5081BDA143900C5E680 /* ChannelViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelViewCell.h; sourceTree = "<group>"; };
+		8419F5091BDA143900C5E680 /* ChannelViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelViewCell.m; sourceTree = "<group>"; };
 		84538BDD1BD910F20013F166 /* NewsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsTableViewCell.h; sourceTree = "<group>"; };
 		84538BDE1BD910F20013F166 /* NewsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsTableViewCell.m; sourceTree = "<group>"; };
 		847FAD361BD8D24900670118 /* 网易新闻.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "网易新闻.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -168,6 +171,8 @@
 				84ED8A481BD9D75700088ACA /* Channel.m */,
 				84ED8A4F1BD9FB6800088ACA /* ChannelLabel.h */,
 				84ED8A501BD9FB6800088ACA /* ChannelLabel.m */,
+				8419F5081BDA143900C5E680 /* ChannelViewCell.h */,
+				8419F5091BDA143900C5E680 /* ChannelViewCell.m */,
 			);
 			path = Channel;
 			sourceTree = "<group>";
@@ -297,6 +302,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8419F50A1BDA143900C5E680 /* ChannelViewCell.m in Sources */,
 				847FADA31BD8DF3A00670118 /* News.m in Sources */,
 				84ED8A461BD9D4D300088ACA /* NSObject+JFExtension.m in Sources */,
 				847FADA01BD8DA5A00670118 /* NetworkTools.m in Sources */,

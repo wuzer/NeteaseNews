@@ -9,6 +9,8 @@
 #import "HomeViewController.h"
 #import "Channel.h"
 #import "ChannelLabel.h"
+#import "ChannelViewCell.h"
+#import "NewsTableViewController.h"
 
 @interface HomeViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 
@@ -17,6 +19,8 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *channelView;
 @property (weak, nonatomic) IBOutlet UICollectionView *CollectionView;
 @property (weak, nonatomic) IBOutlet UICollectionViewFlowLayout *layout;
+
+@property (nonatomic, assign) NSInteger currentIndex;
 
 @end
 
@@ -34,7 +38,17 @@
 }
 
 - (void)viewDidLayoutSubviews {
-    NSLog(@"%s -- %@",__func__,NSStringFromCGRect(self.CollectionView.frame));
+    [super viewDidLayoutSubviews];
+    
+    self.layout.itemSize = self.CollectionView.bounds.size;
+    self.layout.minimumInteritemSpacing = 0;
+    self.layout.minimumLineSpacing = 0;
+    self.layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    
+    // 允许分页
+    self.CollectionView.pagingEnabled = YES;
+    self.CollectionView.showsHorizontalScrollIndicator = false;
+    
 }
 
 #pragma mark - Data Source
@@ -45,9 +59,20 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"channelCell" forIndexPath:indexPath];
+    ChannelViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"channelCell" forIndexPath:indexPath];
     
-    cell.backgroundColor = [UIColor colorWithRed:(arc4random_uniform(256) / 255.0) green:(arc4random_uniform(256) / 255.0) blue:(arc4random_uniform(256) / 255.0) alpha:0.9];
+//    cell.backgroundColor = [UIColor colorWithRed:(arc4random_uniform(256) / 255.0) green:(arc4random_uniform(256) / 255.0) blue:(arc4random_uniform(256) / 255.0) alpha:0.9];
+    
+    // 添加数据
+    cell.urlString = [self.channleList[indexPath.item] urlString];
+    
+    if (![self.childViewControllers containsObject:cell.newsVC]) {
+        [self addChildViewController:cell.newsVC];
+    }
+    
+    
+//    NSLog(@"%@",self.childViewControllers);
+    
     return cell;
 }
 
@@ -57,6 +82,7 @@
     
     // 取消自动缩进
     self.automaticallyAdjustsScrollViewInsets = false;
+    self.channelView.showsHorizontalScrollIndicator = false;
     
     CGFloat margin = 8;
     CGFloat x = margin;
@@ -72,7 +98,20 @@
 //        NSLog(@"%@",NSStringFromCGRect(label.frame));
         [self.channelView addSubview:label];
     }
+    
     self.channelView.contentSize = CGSizeMake(x + margin, height);
+    
+    self.currentIndex = 0;
+}
+
+#pragma mark - delegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    
+    // 当前选中标签
+    ChannelLabel *currentLabel = self.channelView.subviews[self.currentIndex];
+    NSLog(@"%@",currentLabel.text);
+
 }
 
 
