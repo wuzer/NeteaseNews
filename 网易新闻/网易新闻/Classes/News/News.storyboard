@@ -80,8 +80,72 @@
                                     <outlet property="title" destination="2cK-gh-sjq" id="9v0-uT-geX"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="bigImageCell" rowHeight="180" id="0fe-Ue-lSt" customClass="NewsTableViewCell">
+                                <rect key="frame" x="0.0" y="118" width="375" height="180"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0fe-Ue-lSt" id="u7Z-KL-166">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="179.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SPH-at-LM9">
+                                            <rect key="frame" x="8" y="34" width="359" height="100"/>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="100" id="rRA-RN-nXH"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sja-og-6uP">
+                                            <rect key="frame" x="8" y="8" width="37.5" height="18"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F62-DE-X3w">
+                                            <rect key="frame" x="334" y="140" width="33" height="16"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="teb-Il-7d4">
+                                            <rect key="frame" x="8" y="142" width="33" height="16"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <animations/>
+                                    <constraints>
+                                        <constraint firstItem="Sja-og-6uP" firstAttribute="leading" secondItem="u7Z-KL-166" secondAttribute="leadingMargin" id="7wA-qs-Dz1"/>
+                                        <constraint firstItem="teb-Il-7d4" firstAttribute="centerY" secondItem="SPH-at-LM9" secondAttribute="centerY" id="9Bo-tU-Lg9"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="F62-DE-X3w" secondAttribute="bottom" constant="15.5" id="EEm-DN-rUg"/>
+                                        <constraint firstItem="teb-Il-7d4" firstAttribute="leading" secondItem="u7Z-KL-166" secondAttribute="leadingMargin" id="Ptt-dX-gSd"/>
+                                        <constraint firstItem="Sja-og-6uP" firstAttribute="top" secondItem="u7Z-KL-166" secondAttribute="topMargin" id="Rnc-ga-N14"/>
+                                        <constraint firstItem="SPH-at-LM9" firstAttribute="trailing" secondItem="u7Z-KL-166" secondAttribute="trailingMargin" id="UK4-Ka-XWM"/>
+                                        <constraint firstItem="SPH-at-LM9" firstAttribute="leading" secondItem="u7Z-KL-166" secondAttribute="leadingMargin" id="UdO-D7-Oyj"/>
+                                        <constraint firstItem="SPH-at-LM9" firstAttribute="top" secondItem="Sja-og-6uP" secondAttribute="bottom" constant="8" id="W6c-l5-blR"/>
+                                        <constraint firstItem="F62-DE-X3w" firstAttribute="trailing" secondItem="u7Z-KL-166" secondAttribute="trailingMargin" id="mNc-UM-Xc8"/>
+                                        <constraint firstItem="teb-Il-7d4" firstAttribute="top" secondItem="SPH-at-LM9" secondAttribute="bottom" constant="8" id="uVx-rQ-fRu"/>
+                                        <constraint firstItem="F62-DE-X3w" firstAttribute="top" secondItem="SPH-at-LM9" secondAttribute="bottom" constant="6" id="vpQ-22-FOn"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="9Bo-tU-Lg9"/>
+                                        </mask>
+                                    </variation>
+                                </tableViewCellContentView>
+                                <animations/>
+                                <connections>
+                                    <outlet property="digestLabel" destination="teb-Il-7d4" id="d5e-sl-9O4"/>
+                                    <outlet property="iconView" destination="SPH-at-LM9" id="XiG-DC-Mw6"/>
+                                    <outlet property="replyCount" destination="F62-DE-X3w" id="ndC-hf-MMD"/>
+                                    <outlet property="title" destination="Sja-og-6uP" id="0gI-JR-REK"/>
+                                </connections>
+                            </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="imageCell" rowHeight="120" id="am4-NN-5UE" customClass="NewsTableViewCell">
-                                <rect key="frame" x="0.0" y="118" width="375" height="120"/>
+                                <rect key="frame" x="0.0" y="298" width="375" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="am4-NN-5UE" id="18F-JN-U64">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>

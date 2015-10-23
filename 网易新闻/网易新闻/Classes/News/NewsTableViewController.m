@@ -36,7 +36,7 @@
     
     
     __weak typeof(self) weakSelf = self;
-    [News loadDataWithURLString:@"T1348647853363/0-20.html" finished:^(NSArray *newsList) {
+    [News loadDataWithURLString:@"T1348647853363/0-60.html" finished:^(NSArray *newsList) {
         weakSelf.newsList = newsList;
     }];
 }
