@@ -22,12 +22,16 @@
     
     _newsList = newsList;
     
+    
     [self.tableView reloadData];
 }
 
 - (void)setUrlString:(NSString *)urlString {
     _urlString = urlString;
-
+    
+    // 清空缓存
+    self.newsList = nil;
+    
     __weak typeof(self) weakSelf = self;
     [News loadDataWithURLString:urlString finished:^(NSArray *newsList) {
         weakSelf.newsList = newsList;

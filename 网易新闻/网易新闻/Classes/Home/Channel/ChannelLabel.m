@@ -26,8 +26,30 @@
     
     // 然后设置小字体回复正常
     label.font = [UIFont systemFontOfSize:KnormalFontSize];
+    label.userInteractionEnabled = true;
     
     return label;
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    
+    NSLog(@"%s",__func__);
+    if ([self.delegate respondsToSelector:@selector(channelLabelDidSelected:)]) {
+        [self.delegate channelLabelDidSelected:self];
+    }
+}
+
+// 缩放计算
+- (void)setScale:(CGFloat)scale {
+    
+    CGFloat precent = (KSelectedFontSize - KnormalFontSize) / KnormalFontSize;
+    
+    precent = precent * scale + 1;
+    
+    // 通过 transform 设置大小
+    self.transform = CGAffineTransformMakeScale(precent, precent);
+    
+    self.textColor = [UIColor colorWithRed:scale green:0 blue:0 alpha:1.0];
 }
 
 @end

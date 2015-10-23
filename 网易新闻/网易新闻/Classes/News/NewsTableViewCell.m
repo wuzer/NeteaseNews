@@ -30,7 +30,7 @@
     self.replyCount.text = [NSString stringWithFormat:@"%d",news.replyCount];
     
     [self.iconView setImageWithURL:[NSURL URLWithString:news.imgsrc]];
-    
+    self.iconView.image = nil;
     if (news.imgextra.count == 2) {
         int index = 0;
         for (UIImageView *imageView in self.extraImageViews) {
