@@ -9,6 +9,7 @@
 #import "NewsTableViewController.h"
 #import "News.h"
 #import "NewsTableViewCell.h"
+#import <MJRefresh.h>
 
 @interface NewsTableViewController ()
 
@@ -21,9 +22,8 @@
 - (void)setNewsList:(NSArray *)newsList {
     
     _newsList = newsList;
-    
-    
     [self.tableView reloadData];
+
 }
 
 - (void)setUrlString:(NSString *)urlString {
@@ -47,6 +47,18 @@
     
     // 自动计算行高
     self.tableView.rowHeight = UITableViewAutomaticDimension;
+    
+//    __weak typeof(self) weakSelf = self;
+    __weak UITableView *tableView = self.tableView;
+    
+    tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [tableView reloadData];
+        [tableView.header endRefreshing];
+    }];
+    
+    tableView.footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        [tableView.footer endRefreshing];
+    }];
     
 }
 
